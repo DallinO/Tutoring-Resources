@@ -1,0 +1,164 @@
+PSEUDOCODE
+
+KEYWORD         DESCRIPTION
+-------         -----------
+GET             Receive input from the user
+READ            Receive input from a file, a server, or another program
+PUT             Send output to the user
+WRITE           Send output to a file, a server, or another program
+SWITCH/CASE     Make a multi-way decision
+END             End of the structure (file, class, or function)
+->              Assignment operation
+// or #         Comments
+--              A wrapped line of code
+
+
+PUBLIC CLASS Program
+    PUBLIC STATIC Main()
+        # Add some unique logic that initializes a new Scripture object. This
+        # can be done through mamny different ways. Some examples are: prompt
+        # the user to input the scripture text and reference information, use
+        # a preset collection of scripture and reference data and select a 
+        # random one to use, or display several available scriptures for the
+        # user to choose from.
+
+        scripture -> new Scripture( "And it came to pass...", new Reference(
+        --  "ex Book", "ex Chapter", "ex Verse"))
+        # OR
+        --  "ex Book", "ex Chapter", "ex Verse", "ex EndVerse"))
+        # Remember that a Reference object can be constructed with either three
+        # or four parameters.
+
+        input
+        WHILE TRUE
+            CLEAR CONSOLE
+            PUT scripture.DisplayScripture()
+            PUT "Press enter or type 'quit' to exit: "
+            input -> GET
+            IF input == "quit"
+                BREAK
+            IF scripture.WordsHidden() == TRUE
+                BREAK
+            scripture.HideRandomWords( 3 )
+            # Above we are hard coding the amount of words to hide each time.
+            # It would be better to add some logic before the main loop starts
+            # that will get the amount of words to hide at a time from the
+            # user.
+
+
+
+PUBLIC CLASS Word
+    PRIVATE _text
+    PRIVATE _hidden
+    PRIVATE _hiddenText
+
+    PUBLIC Word( text )
+        _text   -> text
+        _hidden -> FALSE
+        FOREACH letter in text
+            _hiddenWord += '_'
+    END
+
+    PUBLIC GetHidden()
+        RETURN _hidden
+    END
+
+    PUBLIC Hide()
+        _hidden -> TRUE
+    END
+
+    PUBLIC GetWordText()
+        IF _hidden == TRUE
+            RETURN _hiddenText
+        ELSE
+            RETURN _text
+    END
+END
+
+
+
+# Version 1:
+PUBLIC CLASS Reference
+    PRIVATE _referenceText
+
+    PUBLIC Reference( book, chapter, verse )
+        _referenceText -> "book chapter: verse"
+    END
+
+    PUBLIC Reference( book, chapter, verse, endVerse )
+        _referenceText -> "book chapter: verse-endVerse"
+    END
+
+    PUBLIC GetReferenceText()
+        RETURN _referenceText
+    END
+END
+
+
+
+# OR
+# Version 2:
+PUBLIC CLASS Reference
+    PRIVATE _book
+    PRIVATE _chapter
+    PRIVATE _verse
+    PRIVATE _endVerse
+
+    PUBLIC Reference( book, chapter, verse )
+        _book    -> book   
+        _chapter -> chapter
+        _verse   -> verse
+    END
+
+    PUBLIC Reference( book, chapter, verse )
+        _book     -> book   
+        _chapter  -> chapter
+        _verse    -> verse
+        _endVerse -> endVerse
+    END
+
+    PUBLIC GetReferenceText()
+        IF _endVerse == NULL
+            RETURN "book chapter: verse"
+        ELSE
+            RETURN "book chapter: verse-endVerse"
+    END
+END
+
+
+
+PUBLIC CLASS Scripture
+    PRIVATE _words
+    PRIVATE _reference
+    PRIVATE _rng -> new Random()
+
+    PUBLIC Scripture( text, reference )
+        _reference -> reference
+        wordArray  -> text.Split()
+        FOREACH wordString in wordArray
+            wordObj -> new Word( wordString )
+            _words.Add( wordObj )
+    END
+
+    PUBLIC WordsHidden()
+        FOREACH word in _words
+            IF word.GetHidden() == FALSE
+                RETURN FALSE
+        RETURN TRUE
+    END
+
+    PUBLIC DisplayScripture()
+        PUT _reference.GetReferenceText() + " - "
+        FOREACH word in _words
+            PUT word.GetWordText() + " "
+    END
+
+    PUBLIC HideRandomWords( numberToHide )
+        counter -> 0
+        WHILE counter < numberToHide AND WordsHidden() == FALSE
+            index
+            DO
+                index = _rng.Next( _words.Count )
+            WHILE _words[ index ].GetHidden() == TRUE
+            _words[ index ].Hide()
+    END

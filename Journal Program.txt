@@ -1,0 +1,192 @@
+PSEUDOCODE
+
+KEYWORD         DESCRIPTION
+-------         -----------
+GET             Receive input from the user
+READ            Receive input from a file, a server, or another program
+PUT             Send output to the user
+WRITE           Send output to a file, a server, or another program
+SWITCH/CASE     Make a multi-way decision
+END             End of the structure (file, class, or function)
+->              Assignment operation
+// or #         Comments
+
+# The Journal program focuses solely on Abstraction and so class constructors
+# are not used and all member variables access types are set to public. The
+# pseudocode provided helps guide the student to fulfill the basic logic of the
+# program. Not all requirements may be represented and improvements to the
+# design will be needed.
+
+PUBLIC CLASS Program
+    PUBLIC STATIC Main()
+        journal -> new Journal()
+        input
+        DO
+            PUT "Welcome..."
+                "1) Add Entry"
+                "2) Display Entries
+                "3) Save"
+                "4) Load"
+
+            input -> GET
+            SWITCH input
+                # Version 1:
+                # Here we pass in a constructed Entry object into the AddEntry
+                # method.
+                CASE 1
+                    entry -> new Entry()
+                    entry.Write()
+                    journal.AddEntry( entry )
+                    BREAK
+
+                # Version 2:
+                # Here we simply execute the AddEntry method which will create
+                # and initialize the entry object.
+                CASE 1
+                    journal.AddEntry()
+                    BREAK
+                CASE 2
+                    journal.DisplayAllEntries()
+                    BREAK
+                CASE 3
+                    PUT "Enter the file path: "
+                    path -> GET
+                    journal.SaveToFile( path )
+                    BREAK
+                CASE 4
+                    PUT "Enter the file path: "
+                    path -> GET
+                    journal.LoadFromFile( path )
+                    BREAK
+                DEFUALT
+                    PUT "Invalid Input"
+                    BREAK    
+        WHILE input != 5
+
+    
+# The journal class represents a journal that contains a collection of _entries.
+# All logic contained within the journal should be focused on operating on the
+# collection of entries not on the state of an individual entry object.
+
+PUBLIC CLASS Journal
+    PUBLIC _entries
+
+    # Version 1:
+    # Here we are taking in the entry object as an argument where it would have
+    # been previously constructed and its state initialized in Main.
+
+    PUBLIC AddEntry( entry )
+        _entries.Add( entry )
+    END
+
+
+    # OR
+    # Version 2:
+    # No parameters are defined because we construct and initialize the entry
+    # object here in the AddEntry method instead of Main
+
+    PUBLIC AddEntry()
+        entry -> new Entry()
+        entry.Write()
+        _entries.Add( entry )
+    END
+
+
+    # This method is designed to display the member variables of each entry in
+    # _entries. Note that it does so by simply looping through the collection 
+    # of entries and calling the internal Display method which is responsible
+    # for handle the printing of the Entry member variables.
+
+    PUBLIC DisplayAllEntries()
+        FOREACH entry in _entries
+            entry.Display()
+    END
+
+
+    # Here we are saving the contents of each entry in our _entries collection
+    # to a user specified file. We make use of the built-in C# class
+    # StreamWriter which is responsible for writing data to a file. We use the
+    # 'using' keyword to ensure that the StreamWriter object we created for 
+    # writing to the file is only usable from within the 'using' block. In
+    # order to read the data back in we save all the entry data on to one
+    # line and then seperate is with a unique character. In this case we are
+    # using the '|' symbol because is it not a letter in any language. 
+
+    PUBLIC SaveToFile( path )
+        USING outputFile -> new StreamWriter( path )
+            FOREACH entry in _entries
+                PUT "entry._date|entry._promptText|entry._entryText"
+    END
+    
+
+    # The LoadFromFile method reads in all the lines from a user specified file
+    # and stores them in the 'lines' array. Note that when we saved out entries
+    # to the file, each entries data (the member variables _date, _promptText, 
+    # and _entryText) where written to a single line therefore we are reversing
+    # the process by reading through the file and storing each line in the 
+    # 'lines' array. We then need to break apart the line into each individual
+    # variable by spliting it wherever we specifiec our unique character that
+    # seperates the data. In our save method above, we used the '|' character.
+    # Now each variable data is stored within the parts array and we simple use
+    # the [] brackets to extract the specifiec data. It follows the same order
+    # that we saved in above which is _date, _promptText, and then _entryText.
+    # Therefore _date is stored in parts[0] and so forth. We then simply create
+    # an etry object and assign the appropriate data to the corresponding
+    # member variable and add the entry to the _entries list.
+
+    PUBLIC LoadFromFile( path )
+        lines -> File.ReadAllLines( path )
+        FOREACH line in lines
+            parts -> line.Split('|')
+            entry -> new Entry()
+            entry._date         ->  parts[0]
+            entry._promptText   ->  parts[1]
+            entry._entryText    ->  parts[2]
+            _entries.Add( entry )
+    END
+
+
+PUBLIC CLASS Entry
+    PUBLIC _date
+    PUBLIC _promptText
+    PUBLIC _entryText
+    PUBLIC _promptGenerator
+
+    # The write method populates the member variables. The _date is set by
+    # using the DateTime class. _promptText is set by calling the
+    # PromptGenerator.GetRandomPrompt method which returns a random prompt.
+    # We then display the returned prompt so that the user can respond to it
+
+    PUBLIC Write()
+        _date           -> DateTime.Now.ToShortDateString()
+        _promptText     -> _promptGenerator.GetRandomPrompt()
+        PUT _promptText
+        _entryText      -> GET
+    END
+
+
+    # Display each member variable to the console.
+
+    PUBLIC Display()
+        PUT _date
+        PUT _promptText
+        PUT _entryText
+    END
+
+
+PUBLIC CLASS PromptGenerator
+    PUBLIC _rng -> new Random()
+    PUBLIC _prompts ->
+        "Enter prompt here",
+        "Enter prompt here",
+        "Enter prompt here
+
+    # The GetRandomPrompt method uses the Random class to generate a random
+    # number between 0 and the size of the _prompts collection. Note that
+    # depending on the type of collection such as an array you would not use
+    # the Count property, instead you wouls use Length.
+
+    PUBLIC GetRandomPrompt()
+        index -> rng.Next( _prompts.Count )            
+        RETURN _prompts[ index ]
+    END

@@ -1,0 +1,265 @@
+PSEUDOCODE
+
+KEYWORD         DESCRIPTION
+-------         -----------
+GET             Receive input from the user
+READ            Receive input from a file, a server, or another program
+PUT             Send output to the user
+WRITE           Send output to a file, a server, or another program
+SWITCH/CASE     Make a multi-way decision
+END             End of the structure (file, class, or function)
+EXIT            Quit the program
+->              Assignment operation
+// or #         Comments
+--              A wrapped line of code
+
+
+PUBLIC CLASS Program
+    PUBLIC STATIC Main()
+        goalManager -> new GoalManager()
+
+        WHILE TRUE
+            PUT "Welcome...
+                1) Add Goal
+                2) Display Goals
+                3) Record Event
+                4) Save Goals
+                5) Load Goals
+                6) Quit"
+
+            input -> GET
+            SWITCH input
+                CASE 1
+                    goalManager.AddGoal()
+                    BREAK
+                CASE 2
+                    goalManager.DisplayGoals()
+                    BREAK
+                CASE 3
+                    goalManager.RecordGoalEvent()
+                    BREAK
+                CASE 4
+                    PUT "Enter the file path: "
+                    path -> GET
+                    goalManager.SaveGoals( path )
+                    BREAK
+                CASE 5
+                    PUT "Enter the file path: "
+                    path -> GET
+                    goalManager.LoadGoals( path )
+                    BREAK
+                CASE 6
+                    EXIT
+                    BREAK
+                DEFUALT
+                    PUT "Invalid Input"
+                    BREAK
+        END
+    END
+END
+            
+
+
+PUBLIC ABSTRACT CLASS Goal
+    PROTECTED _name
+    PROTECTED _description
+    PROTECTED _points
+    PROTECTED _complete
+
+    PUBLIC Goal( name, description, points )
+        _name        -> name
+        _description -> description
+        _points      -> points
+        _complete    -> FALSE
+    END
+
+    PUBLIC Goal( name, description, points, complete )
+        _name        -> name
+        _description -> description
+        _points      -> points
+        _complete    -> complete
+    END
+
+    PUBLIC GetComplete()
+        RETURN _complete
+    END
+
+    PRIVATE GetCompleteChar()
+        IF _complete == TRUE
+            RETURN 'X'
+        ELSE
+            RETURN ' '
+    END
+
+    PUBLIC VIRTUAL DisplayGoal()
+        RETURN "[ GetCompleteChar() ] _name: _description"
+    END
+
+    PUBLIC ABSTRACT GetSaveString() END
+
+    PUBLIC ABSTRACT RecordEvent() END
+END
+
+
+
+PUBLIC CLASS SimpleGoal : Goal
+    PUBLIC SimpleGoal( name, description, points ) : BASE(...) END
+    PUBLIC SimpleGoal( name, description, points, complete ) : BASE(...) END
+
+    PUBLIC OVERRIDE GetSaveString()
+        RETURN "GetType()|_name|_description|_points|_complete"
+    END
+
+    PUBLIC OVERRIDE RecordEvent()
+        _complete -> TRUE
+        PUT "Congratulations..."
+        RETURN _points
+    END
+END
+
+
+
+PUBLIC CLASS EternalGoal : Goal
+    PUBLIC EternalGoal( name, description, points ) : BASE(...) END
+
+    PUBLIC OVERRIDE GetSaveString()
+        RETURN "GetType()|_name|_description|_points"
+    END
+
+    PUBLIC OVERRIDE RecordEvent()
+        PUT "Congratulations..."
+        RETURN _points
+    END
+END
+
+
+
+PUBLIC CLASS ChecklistGoal : Goal
+    PRIVATE _current
+    PRIVATE _target
+    PRIVATE _bonus
+
+    PUBLIC EternalGoal( name, description, points, target, bonus ) : BASE(...)
+        _current -> 0
+        _target  -> target
+        _bonus   -> bonus
+    END
+
+    PUBLIC EternalGoal( name, description, points, complete, current,
+    --  target, bonus ) : BASE(...)
+        _current -> current
+        _target  -> target
+        _bonus   -> bonus
+    END
+
+    PUBLIC OVERRIDE DisplayGoal()
+        RETURN BASE.DisplayGoal() + " [_current/_target]"
+    END
+
+    PUBLIC OVERRIDE GetSaveString()
+        RETURN "GetType()|_name|_description|_points|_complete|_current|
+        --  target|bonus"
+    END
+
+    PUBLIC OVERRIDE RecordEvent()
+        _current++
+        IF _current == _target
+            _complete -> TRUE
+            PUT "Congratulations..."
+            RETURN _points + _bonus
+        ELSE
+            PUT "Congratulations..."
+            RETURN _points
+    END
+END
+
+
+
+PUBLIC CLASS GoalManager
+    PRIVATE _goals
+    PRIVATE _score
+
+    PUBLIC AddGoal()
+        PUT "1) Simple
+            2) Eternal
+            3) Checklist"
+
+        input -> GET
+        PUT "Enter the name: "
+        name -> GET
+        PUT "Enter a description: "
+        description -> GET
+        PUT "Enter point value: "
+        points -> GET
+        
+        SWITCH input
+            CASE 1
+                simple -> new SimpleGoal( name, description, points )
+                _goals.Add( simple )
+                BREAK
+            CASE 2
+                eternal -> new EternalGoal( name, description, points )
+                _goals.Add( eternal )
+                BREAK
+            CASE 3
+                PUT "Enter the target number: "
+                target -> GET
+                PUT "Enter the bonus value: "
+                bonus -> GET
+                checklist = new ChecklistGoal( name, description, points,
+                --  target, bonus )
+                _goals.Add( checklist )
+                BREAK
+            DEFUALT
+                PUT "Invalid Input"
+                BREAK
+    END
+
+    PUBLIC DisplayGoals()
+        counter -> 1
+        FOREACH goal in _goals
+            PUT "counter) " + goal.DisplayGoal()
+            counter ++
+    END
+
+    PUBLIC RecordGoalEvent()
+        DisplayGoals()
+        PUT "Select a goal: "
+        input -> GET
+        IF _goals[ input ].GetComplete() == TRUE
+            PUT "Goal is already completed"
+        ELSE
+            _score += _goals[ input ].RecordEvent()
+    END
+
+    PUBLIC SaveGoals( path )
+        USING output -> new StreamWriter( path )
+            WRITE "Score|_score"
+            FOREACH goal in _goals
+                WRITE goal.GetSaveString()
+    END
+
+    PUBLIC LoadGoals( path )
+        lines -> File.ReadAllLines( path )
+        FOREACH line in lines
+            data -> line.Split("|")
+
+        SWITCH data[0]
+            CASE "Score"
+                _score -> data[1]
+                BREAK
+            CASE "SimpleGoal"
+                simple -> new Simple ( data[1], data[2], data[3], data[4] )
+                _goals.Add( simple )
+                BREAK
+            CASE "EternalGoal"
+                eternal -> new Eternal ( data[1], data[2], data[3] )
+                _goals.Add( eternal )
+                BREAK
+            CASE "ChecklistGoal"
+                checklist -> new ChecklistGoal( data[1], data[2], data[3],
+                --  data[4], data[7], data[6], data[7] )
+                _goals.Add( checklist )
+                BREAK
+    End
+END
