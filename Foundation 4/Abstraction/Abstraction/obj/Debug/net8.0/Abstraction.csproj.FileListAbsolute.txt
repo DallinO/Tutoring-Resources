@@ -1,0 +1,15 @@
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\bin\Debug\net8.0\Abstraction.exe
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\bin\Debug\net8.0\Abstraction.deps.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\bin\Debug\net8.0\Abstraction.runtimeconfig.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\bin\Debug\net8.0\Abstraction.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\bin\Debug\net8.0\Abstraction.pdb
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.AssemblyInfoInputs.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.AssemblyInfo.cs
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.csproj.CoreCompileInputs.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.sourcelink.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\refint\Abstraction.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.pdb
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\Abstraction.genruntimeconfig.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Abstraction\Abstraction\obj\Debug\net8.0\ref\Abstraction.dll

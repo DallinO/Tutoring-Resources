@@ -1,0 +1,15 @@
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.AssemblyInfoInputs.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.AssemblyInfo.cs
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.csproj.CoreCompileInputs.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.sourcelink.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\bin\Debug\net8.0\Encapsulation.exe
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\bin\Debug\net8.0\Encapsulation.deps.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\bin\Debug\net8.0\Encapsulation.runtimeconfig.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\bin\Debug\net8.0\Encapsulation.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\bin\Debug\net8.0\Encapsulation.pdb
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\refint\Encapsulation.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.pdb
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\Encapsulation.genruntimeconfig.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\Foundation 4\Encapsulation\Encapsulation\obj\Debug\net8.0\ref\Encapsulation.dll
