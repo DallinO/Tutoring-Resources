@@ -3,6 +3,7 @@ def mystery_1(text):
 
     for letter in text:
         stack.append(letter)
+        print(stack)
 
     result = ""
     while len(stack) > 0:
@@ -11,6 +12,6 @@ def mystery_1(text):
     
     return result
 
-text = "a nut for a jar of tuna"
+text = "Hello"
 result = mystery_1(text)
 print(result)

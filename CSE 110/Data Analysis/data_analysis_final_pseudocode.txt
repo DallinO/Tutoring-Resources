@@ -1,0 +1,57 @@
+overall_max_life_expect
+overall_min_life_expect
+overall_max_country
+overall_min_country
+overall_max_year
+overall_min_year
+
+target_year_max_life
+target_year_min_life9
+target_year_max_country
+target_year_min_country
+target_year_avg
+sum
+total
+
+PUT 'Enter the year of interest: '
+target_year ->  GET
+
+READ 'life-expectancy.csv'
+    NEXT file
+    FOR line IN file
+        data -> line.split(',')
+        country -> data[0]
+        year -> data[2]
+        life_expectancy -> data[3]
+
+        IF life_expectancy IS GREATER overall_max_life_expect
+            overall_max_life_expect -> life_expectancy
+            overall_max_country -> country
+            overall_max_year -> year
+
+        IF life_expectancy IS LESS overall_min_life_expect
+            overall_min_life_expect -> life_expectancy
+            overall_min_country -> country
+            overall_min_year -> year
+
+        IF year EQUALS target_year
+            if life_expectancy IS GREATER target_year_max_life
+                target_year_max_life -> life_expectancy
+                target_year_max_country -> country
+                target_year_max_year -> year
+
+            IF life_expectancy IS LESS target_year_min_life
+                target_year_min_life -> life_expectancy
+                target_year_min_country -> country
+                target_year_min_year -> year
+
+            sum += life_expectancy
+            total += 1
+target_year_avg -> sum / total
+
+PUT 'The overall max life expectancy is: overall_max_life_expect from overall_max_country in overall_max_year'
+PUT 'The overall min life expectancy is: overall_min_life_expect from overall_min_country in overall_min_year'
+PUT 'For the year target_year'
+PUT 'The average life expectancy across all countries was target_year_avg'
+PUT 'The max life expectancy was in target_year_max_country with target_year_max_life'
+PUT 'The max life expectancy was in target_year_min_country with target_year_min_life'

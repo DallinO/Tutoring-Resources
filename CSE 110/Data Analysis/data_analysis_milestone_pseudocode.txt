@@ -1,0 +1,43 @@
+PSEUDOCODE
+
+KEYWORD         DESCRIPTION
+-------         -----------
+GET             Receive input from the user
+PUT             Send output to the user
+READ            Receive input from a file, a server, or another program
+WRITE           Send output to a file, a server, or another program
+SWITCH/CASE     Make a multi-way decision
+END             End of the structure (file, class, or function)
+->              Assignment operation
+// or #         Comments
+--              A wrapped line of code
+
+############################## BEGINNING OF FILE ##############################
+
+overall_max_life_expect
+overall_min_life_expect
+overall_max_country
+overall_min_country
+overall_max_year
+overall_min_year
+
+READ 'life-expectancy.csv'
+    NEXT file
+    FOR line IN file
+        data -> line.split(',')
+        country -> data[0]
+        year -> int(data[2])
+        life_expectancy -> float(data[3])
+
+        IF life_expectancy IS GREATER overall_max_life_expect:
+            overall_max_life_expect -> life_expectancy
+            overall_max_country -> country
+            overall_max_year -> year
+
+        if life_expectancy IS LESS overall_min_life_expect:
+            overall_min_life_expect -> life_expectancy
+            overall_min_country -> country
+            overall_min_year -> year
+
+PUT 'The overall max life expectancy is: overall_max_life_expect from overall_max_country in overall_max_year'
+PUT 'The overall min life expectancy is: overall_min_life_expect from overall_min_country in overall_min_year'

@@ -93,7 +93,7 @@ def summarize_degrees(filename):
 
 # Sample Test Cases (may not be comprehensive) 
 print("\n=========== PROBLEM 2 TESTS ===========")
-print(summarize_degrees("census.txt"))  # You might need to add a path for the file
+#print(summarize_degrees("census.txt"))  # You might need to add a path for the file
 # Results may be in a different order:
 # {'Bachelors': 5355, 'HS-grad': 10501, '11th': 1175, 
 # 'Masters': 1723, '9th': 514, 'Some-college': 7291, 
@@ -150,7 +150,7 @@ def is_anagram(word1, word2):
     return(word1_dict == word2_dict)
 
 # Sample Test Cases (may not be comprehensive) 
-print("\n=========== PROBLEM 3 TESTS ===========")
+# print("\n=========== PROBLEM 3 TESTS ===========")
 print(is_anagram("CAT","ACT")) # True
 print(is_anagram("DOG", "GOOD")) # False
 print(is_anagram("AABBCCDD", "ABCD")) # False
