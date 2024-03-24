@@ -1,4 +1,4 @@
-KEYWORD						DESCRIPTION
+iPUTKEYWORD						DESCRIPTION
 -------						-----------
 GET							Receive input from the user
 READ						Receive input from a file, a server, or another program

@@ -55,7 +55,7 @@ PUBLIC CLASS Program
                     PUT "Invalid Input"
                     BREAK
         END
-    END
+    END{}
 END
             
 
@@ -139,13 +139,13 @@ PUBLIC CLASS ChecklistGoal : Goal
     PRIVATE _target
     PRIVATE _bonus
 
-    PUBLIC EternalGoal( name, description, points, target, bonus ) : BASE(...)
+    PUBLIC ChecklistGoal( name, description, points, target, bonus ) : BASE(...)
         _current -> 0
         _target  -> target
         _bonus   -> bonus
     END
 
-    PUBLIC EternalGoal( name, description, points, complete, current,
+    PUBLIC ChecklistlGoal( name, description, points, complete, current,
     --  target, bonus ) : BASE(...)
         _current -> current
         _target  -> target

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj": {}
+    "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj": {
+    "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj",
+        "projectUniqueName": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj",
         "projectName": "Abstraction",
-        "projectPath": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj",
+        "projectPath": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Foundation 4\\Abstraction\\Abstraction\\Abstraction.csproj",
         "packagesPath": "C:\\Users\\Olson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\Foundation 4\\Abstraction\\Abstraction\\obj\\",
+        "outputPath": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Foundation 4\\Abstraction\\Abstraction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
