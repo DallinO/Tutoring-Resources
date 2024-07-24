@@ -36,12 +36,10 @@ with open('life-expectancy.csv', 'r') as file:
             if life_expectancy > target_year_max_life:
                 target_year_max_life = life_expectancy
                 target_year_max_country = country
-                target_year_max_year = year
 
             if life_expectancy < target_year_min_life:
                 target_year_min_life = life_expectancy
                 target_year_min_country = country
-                target_year_min_year = year
 
             sum += life_expectancy
             total += 1

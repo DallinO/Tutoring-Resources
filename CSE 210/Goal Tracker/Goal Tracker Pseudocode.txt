@@ -9,53 +9,17 @@ WRITE           Send output to a file, a server, or another program
 SWITCH/CASE     Make a multi-way decision
 END             End of the structure (file, class, or function)
 EXIT            Quit the program
-->              Assignment operation
+INC             Increment
+DEC             Decrement
+←               Assignment operation
 // or #         Comments
 --              A wrapped line of code
 
 
 PUBLIC CLASS Program
     PUBLIC STATIC Main()
-        goalManager -> new GoalManager()
-
-        WHILE TRUE
-            PUT "Welcome...
-                1) Add Goal
-                2) Display Goals
-                3) Record Event
-                4) Save Goals
-                5) Load Goals
-                6) Quit"
-
-            input -> GET
-            SWITCH input
-                CASE 1
-                    goalManager.AddGoal()
-                    BREAK
-                CASE 2
-                    goalManager.DisplayGoals()
-                    BREAK
-                CASE 3
-                    goalManager.RecordGoalEvent()
-                    BREAK
-                CASE 4
-                    PUT "Enter the file path: "
-                    path -> GET
-                    goalManager.SaveGoals( path )
-                    BREAK
-                CASE 5
-                    PUT "Enter the file path: "
-                    path -> GET
-                    goalManager.LoadGoals( path )
-                    BREAK
-                CASE 6
-                    EXIT
-                    BREAK
-                DEFUALT
-                    PUT "Invalid Input"
-                    BREAK
-        END
-    END{}
+        goalManager ← new GoalManager()
+        goalManager.Start()
 END
             
 
@@ -67,17 +31,17 @@ PUBLIC ABSTRACT CLASS Goal
     PROTECTED _complete
 
     PUBLIC Goal( name, description, points )
-        _name        -> name
-        _description -> description
-        _points      -> points
-        _complete    -> FALSE
+        _name        ← name
+        _description ← description
+        _points      ← points
+        _complete    ← FALSE
     END
 
     PUBLIC Goal( name, description, points, complete )
-        _name        -> name
-        _description -> description
-        _points      -> points
-        _complete    -> complete
+        _name        ← name
+        _description ← description
+        _points      ← points
+        _complete    ← complete
     END
 
     PUBLIC GetComplete()
@@ -85,7 +49,7 @@ PUBLIC ABSTRACT CLASS Goal
     END
 
     PRIVATE GetCompleteChar()
-        IF _complete == TRUE
+        IF _complete EQUALS TRUE
             RETURN 'X'
         ELSE
             RETURN ' '
@@ -111,7 +75,7 @@ PUBLIC CLASS SimpleGoal : Goal
     END
 
     PUBLIC OVERRIDE RecordEvent()
-        _complete -> TRUE
+        _complete ← TRUE
         PUT "Congratulations..."
         RETURN _points
     END
@@ -140,16 +104,16 @@ PUBLIC CLASS ChecklistGoal : Goal
     PRIVATE _bonus
 
     PUBLIC ChecklistGoal( name, description, points, target, bonus ) : BASE(...)
-        _current -> 0
-        _target  -> target
-        _bonus   -> bonus
+        _current ← 0
+        _target  ← target
+        _bonus   ← bonus
     END
 
     PUBLIC ChecklistlGoal( name, description, points, complete, current,
     --  target, bonus ) : BASE(...)
-        _current -> current
-        _target  -> target
-        _bonus   -> bonus
+        _current ← current
+        _target  ← target
+        _bonus   ← bonus
     END
 
     PUBLIC OVERRIDE DisplayGoal()
@@ -163,8 +127,8 @@ PUBLIC CLASS ChecklistGoal : Goal
 
     PUBLIC OVERRIDE RecordEvent()
         _current++
-        IF _current == _target
-            _complete -> TRUE
+        IF _current EQUALS _target
+            _complete ← TRUE
             PUT "Congratulations..."
             RETURN _points + _bonus
         ELSE
@@ -179,44 +143,84 @@ PUBLIC CLASS GoalManager
     PRIVATE _goals
     PRIVATE _score
 
+    PUBLIC Start()
+        WHILE TRUE
+            PUT "Welcome...
+                1) Add Goal
+                2) Display Goals
+                3) Record Event
+                4) Save Goals
+                5) Load Goals
+                6) Quit"
+
+            input ← GET
+            SWITCH input
+                CASE 1
+                    AddGoal()
+                    BREAK
+                CASE 2
+                    DisplayGoals()
+                    BREAK
+                CASE 3
+                    RecordGoalEvent()
+                    BREAK
+                CASE 4
+                    PUT "Enter the file path: "
+                    path ← GET
+                    SaveGoals( path )
+                    BREAK
+                CASE 5
+                    PUT "Enter the file path: "
+                    path ← GET
+                    LoadGoals( path )
+                    BREAK
+                CASE 6
+                    EXIT
+                    BREAK
+                DEFUALT
+                    PUT "Invalid Input"
+                    BREAK
+        END
+
     PUBLIC AddGoal()
         PUT "1) Simple
             2) Eternal
             3) Checklist"
 
-        input -> GET
-        PUT "Enter the name: "
-        name -> GET
-        PUT "Enter a description: "
-        description -> GET
-        PUT "Enter point value: "
-        points -> GET
-        
-        SWITCH input
-            CASE 1
-                simple -> new SimpleGoal( name, description, points )
-                _goals.Add( simple )
-                BREAK
-            CASE 2
-                eternal -> new EternalGoal( name, description, points )
-                _goals.Add( eternal )
-                BREAK
-            CASE 3
-                PUT "Enter the target number: "
-                target -> GET
-                PUT "Enter the bonus value: "
-                bonus -> GET
-                checklist = new ChecklistGoal( name, description, points,
-                --  target, bonus )
-                _goals.Add( checklist )
-                BREAK
-            DEFUALT
-                PUT "Invalid Input"
-                BREAK
+        input ← GET
+
+        IF input GREATER THAN 1 AND input LESS THAN 3
+            PUT "Enter the name: "
+            name ← GET
+            PUT "Enter a description: "
+            description ← GET
+            PUT "Enter point value: "
+            points ← GET
+            
+            SWITCH input
+                CASE 1
+                    simple ← new SimpleGoal( name, description, points )
+                    _goals.Add( simple )
+                    BREAK
+                CASE 2
+                    eternal ← new EternalGoal( name, description, points )
+                    _goals.Add( eternal )
+                    BREAK
+                CASE 3
+                    PUT "Enter the target number: "
+                    target ← GET
+                    PUT "Enter the bonus value: "
+                    bonus ← GET
+                    checklist ← new ChecklistGoal( name, description, points,
+                    --  target, bonus )
+                    _goals.Add( checklist )
+                    BREAK
+        ELSE
+            PUT "Invalid input"
     END
 
     PUBLIC DisplayGoals()
-        counter -> 1
+        counter ← 1
         FOREACH goal in _goals
             PUT "counter) " + goal.DisplayGoal()
             counter ++
@@ -225,39 +229,39 @@ PUBLIC CLASS GoalManager
     PUBLIC RecordGoalEvent()
         DisplayGoals()
         PUT "Select a goal: "
-        input -> GET
-        IF _goals[ input ].GetComplete() == TRUE
+        input ← GET
+        IF _goals[ input ].GetComplete() EQUALS TRUE
             PUT "Goal is already completed"
         ELSE
-            _score += _goals[ input ].RecordEvent()
+            _score INC _goals[ input ].RecordEvent()
     END
 
     PUBLIC SaveGoals( path )
-        USING output -> new StreamWriter( path )
+        USING output ← new StreamWriter( path )
             WRITE "Score|_score"
             FOREACH goal in _goals
                 WRITE goal.GetSaveString()
     END
 
     PUBLIC LoadGoals( path )
-        lines -> File.ReadAllLines( path )
+        lines ← File.ReadAllLines( path )
         FOREACH line in lines
-            data -> line.Split("|")
+            data ← line.Split("|")
 
         SWITCH data[0]
             CASE "Score"
-                _score -> data[1]
+                _score ← data[1]
                 BREAK
             CASE "SimpleGoal"
-                simple -> new Simple ( data[1], data[2], data[3], data[4] )
+                simple ← new Simple ( data[1], data[2], data[3], data[4] )
                 _goals.Add( simple )
                 BREAK
             CASE "EternalGoal"
-                eternal -> new Eternal ( data[1], data[2], data[3] )
+                eternal ← new Eternal ( data[1], data[2], data[3] )
                 _goals.Add( eternal )
                 BREAK
             CASE "ChecklistGoal"
-                checklist -> new ChecklistGoal( data[1], data[2], data[3],
+                checklist ← new ChecklistGoal( data[1], data[2], data[3],
                 --  data[4], data[7], data[6], data[7] )
                 _goals.Add( checklist )
                 BREAK

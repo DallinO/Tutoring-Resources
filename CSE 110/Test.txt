@@ -1,0 +1,28 @@
+PSEUDOCODE
+
+KEYWORD         DESCRIPTION
+-------         -----------
+GET             Receive input from the user
+READ            Receive input from a file, a server, or another program
+PUT             Send output to the user
+WRITE           Send output to a file, a server, or another program
+SWITCH/CASE     Make a multi-way decision
+END             End of the structure (file, class, or function)
+<-              Assignment operation
+// or #         Comments
+--              A wrapped line of code
+******************************************************************************
+
+
+
+number
+WHILE number NOT EQUAL 0
+
+    PUT "Enter the number (0 to quit): "
+    number <- GET 
+
+    PUT "Factors:"
+    FOR x IN RANGE 1 TO number
+        IF ( number % x ) EQUAL 0
+            PUT x
+
