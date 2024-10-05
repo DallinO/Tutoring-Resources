@@ -22,7 +22,7 @@ WHILE number NOT EQUAL 0
     number <- GET 
 
     PUT "Factors:"
-    FOR x IN RANGE 1 TO number
+    FOR x IN RANGE 1 TO number + 1
         IF ( number % x ) EQUAL 0
             PUT x
 

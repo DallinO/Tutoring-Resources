@@ -1,0 +1,90 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Journal Program\\Journal Program\\JournalProgram2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5468FE4D-2750-4ABE-97E6-B8C1CE963910}|JournalProgram2\\JournalProgram2.csproj|c:\\users\\olson\\documents\\github\\tutoring-resources\\cse 210\\journal program\\journal program\\journalprogram2\\journalprogram2\\entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5468FE4D-2750-4ABE-97E6-B8C1CE963910}|JournalProgram2\\JournalProgram2.csproj|solutionrelative:journalprogram2\\entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5468FE4D-2750-4ABE-97E6-B8C1CE963910}|JournalProgram2\\JournalProgram2.csproj|c:\\users\\olson\\documents\\github\\tutoring-resources\\cse 210\\journal program\\journal program\\journalprogram2\\journalprogram2\\journal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5468FE4D-2750-4ABE-97E6-B8C1CE963910}|JournalProgram2\\JournalProgram2.csproj|solutionrelative:journalprogram2\\journal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5468FE4D-2750-4ABE-97E6-B8C1CE963910}|JournalProgram2\\JournalProgram2.csproj|c:\\users\\olson\\documents\\github\\tutoring-resources\\cse 210\\journal program\\journal program\\journalprogram2\\journalprogram2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5468FE4D-2750-4ABE-97E6-B8C1CE963910}|JournalProgram2\\JournalProgram2.csproj|solutionrelative:journalprogram2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Journal.cs",
+              "DocumentMoniker": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Journal Program\\Journal Program\\JournalProgram2\\JournalProgram2\\Journal.cs",
+              "RelativeDocumentMoniker": "JournalProgram2\\Journal.cs",
+              "ToolTip": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Journal Program\\Journal Program\\JournalProgram2\\JournalProgram2\\Journal.cs",
+              "RelativeToolTip": "JournalProgram2\\Journal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T19:20:59.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Entry.cs",
+              "DocumentMoniker": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Journal Program\\Journal Program\\JournalProgram2\\JournalProgram2\\Entry.cs",
+              "RelativeDocumentMoniker": "JournalProgram2\\Entry.cs",
+              "ToolTip": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Journal Program\\Journal Program\\JournalProgram2\\JournalProgram2\\Entry.cs",
+              "RelativeToolTip": "JournalProgram2\\Entry.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T19:14:42.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Journal Program\\Journal Program\\JournalProgram2\\JournalProgram2\\Program.cs",
+              "RelativeDocumentMoniker": "JournalProgram2\\Program.cs",
+              "ToolTip": "C:\\Users\\Olson\\Documents\\GitHub\\Tutoring-Resources\\CSE 210\\Journal Program\\Journal Program\\JournalProgram2\\JournalProgram2\\Program.cs",
+              "RelativeToolTip": "JournalProgram2\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T19:13:45.329Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

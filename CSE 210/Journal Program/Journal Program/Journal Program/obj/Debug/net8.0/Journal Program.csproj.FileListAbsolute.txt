@@ -1,0 +1,15 @@
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\bin\Debug\net8.0\Journal Program.exe
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\bin\Debug\net8.0\Journal Program.deps.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\bin\Debug\net8.0\Journal Program.runtimeconfig.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\bin\Debug\net8.0\Journal Program.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\bin\Debug\net8.0\Journal Program.pdb
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.AssemblyInfoInputs.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.AssemblyInfo.cs
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.csproj.CoreCompileInputs.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.sourcelink.json
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\refint\Journal Program.dll
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.pdb
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\Journal Program.genruntimeconfig.cache
+C:\Users\Olson\Documents\GitHub\Tutoring-Resources\CSE 210\Journal Program\Journal Program\Journal Program\obj\Debug\net8.0\ref\Journal Program.dll
